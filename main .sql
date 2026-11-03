@@ -54,9 +54,33 @@ alter table student add column age int not null default 19; -- to add column in 
 alter table student drop column age; -- to delete the column from table
 alter table student modify column age varchar(2); -- modify can change column altributes 
 alter table student change age stu_age int; -- change used for change the name of column and datatype 
-
 alter table student rename to stu; -- to change the table name
 truncate table student; -- used for deleting all the table rows from table
+ -- JOINT -- 
+create table studentt (
+  id int primary key,
+  name varchar(50)
+);
+insert into studentt (id, name)
+values (101, 'adam'), (102, 'bob'), (103, 'casey');
+
+create table course(
+id int primary key ,
+course varchar(50)
+);
+insert into course(id,course) values
+(102,"english"),
+(105,"math"),
+(103,"science"),
+(107,"computer science");
+select * from studentt;
+select * from course;
+
+select * from studentt inner join course on studentt.id = course.id; -- comman id from studentt table and course table will be shown
+select * from studentt as s inner join course  as c on s.id = c.id; -- shortcut for table name s,cache index
+select * from studentt as a left join course as b on a.id = b.id; -- all the element from left table ex:- a will be shown and only maching element from table b will be display
+select * from studentt as a right join course as b on a.id = b.id; -- all the elemient from right joint will  be diaplay and maching element from right join will be display
+select * from studentt as a left join course as b on a.id = b.id union select * from studentt as a right join course as b on a.id = b.id; -- full join 
 
 
 
