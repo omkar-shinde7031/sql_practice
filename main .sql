@@ -55,6 +55,14 @@ alter table student drop column age; -- to delete the column from table
 alter table student modify column age varchar(2); -- modify can change column altributes 
 alter table student change age stu_age int; -- change used for change the name of column and datatype 
 
+alter table student rename to stu; -- to change the table name
+truncate table student; -- used for deleting all the table rows from table
+
+
+
+
+
+
 
 
 

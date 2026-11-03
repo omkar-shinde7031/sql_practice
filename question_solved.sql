@@ -27,3 +27,7 @@ select * from student;
 insert into student values
 (106,"ram",90,"A","mumbai"),
 (107,"madhav",78,"B","nashik");
+
+alter table student change name full_name varchar(20);
+delete from student where marks > 80;
+alter table student drop column grades;
